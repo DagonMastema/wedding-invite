@@ -8,20 +8,25 @@
 </head>
 <body>
 
-    <div class="invitation-wrapper">
-    <video id="wedding-video" playsinline poster="poster.png">
-        <source src="video.mp4" type="video/mp4">
-    </video>
+    <div id="rotate-device-screen">
+    <div class="rotate-content">
+        <div class="phone-icon">🔄</div>
+        <h2>Please tilt your phone</h2>
+        <p>Rotate to landscape to view the invitation</p>
+    </div>
+</div>
 
-    <div id="video-controls" class="overlay">
-        <div class="text-content">
-            <h2>Akuthota's Wedding Invitation</h2>
-            <h3>For</h3>
-            <h1 id="guest-name">Valued Guest</h1>
-            <button id="play-btn">
-                <span class="play-icon">▶</span>
-                Click to Open
-            </button>
+<div class="main-content">
+    <div class="invitation-wrapper">
+        <video id="wedding-video" playsinline poster="poster.png">
+            <source src="video.mp4" type="video/mp4">
+        </video>
+        <div id="video-controls" class="overlay">
+            <div class="text-content">
+                <p>Invitation for</p>
+                <h1 id="guest-name">Valued Guest</h1>
+                <button id="play-btn">Click to Open</button>
+            </div>
         </div>
     </div>
 </div>
