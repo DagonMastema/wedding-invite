@@ -1,0 +1,97 @@
+/* --- GLOBAL STYLES --- */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    /* Matching the deep text color of your invite */
+    background-color: #1a1a1a;
+}
+
+/* --- WRAPPER --- */
+.invitation-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* --- VIDEO --- */
+#wedding-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- INITIAL OVERLAY --- */
+.overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    
+    /* Subtle dimming to ensure white background doesn't blend too much with bright poster parts */
+    background: rgba(0, 0, 0, 0.1); 
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #4a100b; /* Base color for main text */
+    transition: opacity 1s ease;
+}
+
+/* --- TEXT CUSTOMIZATION FROM POSTER --- */
+.text-content {
+    background: rgba(255, 255, 255, 0.1); /* Optional: extra legibility layer */
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.text-content p {
+    font-size: 1.1rem;
+    color: #4a4a4a; /* Mapped from the 'Akuthota's' secondary text */
+    margin: 0;
+}
+
+h1#guest-name {
+    font-size: 2.8rem;
+    
+    /* MAPPED COLOR: Deep Charcoal from names like 'Dr. Chaitanya' */
+    color: #2c2c2c; 
+    
+    margin: 10px 0 30px 0;
+    font-weight: bold;
+}
+
+/* --- BUTTON CUSTOMIZATION FROM POSTER --- */
+#play-btn {
+    /* MAPPED COLOR: Warm Gold Accent from the date border and '08th' */
+    background: #d4a974; 
+    
+    border: none;
+    padding: 18px 50px;
+    
+    /* MAPPED COLOR: Contrast Text Color (White) */
+    color: #4a100b; 
+    
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 5px; /* Matches the rectangular/hard-edge feel of the invite */
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+#play-btn:hover {
+    background: #c6935b; /* Slightly darker gold on hover */
+    transform: translateY(-2px);
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
