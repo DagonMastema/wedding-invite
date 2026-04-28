@@ -138,3 +138,143 @@ h1#guest-name {
     50% { transform: rotate(90deg); }
     100% { transform: rotate(0deg); }
 }
+
+#rotate-device-screen, .main-content {
+    transition: opacity 1.5s ease-in-out; /* Makes the reveal a soft fade */
+}
+
+/* 1. Hide Main Content by default */
+.main-content {
+    display: none;
+}
+
+/* 2. Default Tilt Screen styling (no longer wrapped in a @media query) */
+#rotate-device-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #fdfaf5;
+    color: #d4a974;
+    text-align: center;
+    padding: 20px;
+}
+
+/* 3. The Override: If landscape OR the force class is present, switch views */
+@media (orientation: landscape) {
+    #rotate-device-screen { display: none; }
+    .main-content { display: block; }
+}
+
+/* This is what your 5-second timer triggers */
+.force-landscape #rotate-device-screen {
+    display: none !important;
+}
+
+.force-landscape .main-content {
+    display: block !important;
+}
+
+/* Container for the animation */
+.guide-container {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* The Phone Frame */
+.phone-silhouette {
+    width: 40px;
+    height: 70px;
+    border: 3px solid #d4a974; /* Using your Gold accent color */
+    border-radius: 6px;
+    position: relative;
+    animation: elegant-rotate 2.5s infinite ease-in-out;
+}
+
+/* The "Screen" inside the phone */
+.phone-screen {
+    position: absolute;
+    top: 5px;
+    left: 4px;
+    right: 4px;
+    bottom: 8px;
+    background-color: rgba(212, 169, 116, 0.2); /* Light gold tint */
+    border-radius: 2px;
+}
+
+/* The Home Button dot */
+.phone-silhouette::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 3px;
+    background-color: #d4a974;
+    border-radius: 50%;
+}
+
+/* Elegant Rotation Animation */
+@keyframes elegant-rotate {
+    0% { transform: rotate(0deg); }
+    30% { transform: rotate(90deg); }
+    70% { transform: rotate(90deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.orientation-hint {
+    margin-top: 40px;
+    padding: 15px;
+    background-color: rgba(212, 169, 116, 0.1); /* Very light gold tint */
+    border-radius: 8px;
+    max-width: 280px;
+    border: 1px dashed #d4a974; /* Dotted gold border */
+}
+
+.hint-title {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #4a100b; /* Using the deep red/brown from your invite */
+    margin-bottom: 5px !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hint-text {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #4a4a4a;
+    margin: 0 !important;
+}
+
+/* Ensure the phone silhouette from previous step is still there */
+.guide-container {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.phone-silhouette {
+    width: 35px;
+    height: 60px;
+    border: 2px solid #d4a974;
+    border-radius: 5px;
+    position: relative;
+    animation: elegant-rotate 2.5s infinite ease-in-out;
+}
+
+@keyframes elegant-rotate {
+    0% { transform: rotate(0deg); }
+    30% { transform: rotate(90deg); }
+    70% { transform: rotate(90deg); }
+    100% { transform: rotate(0deg); }
+}
